@@ -1,0 +1,179 @@
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://binacs.cn/}{\Large Bing Li}}\\
+  \href{https://binacs.cn}{https://binacs.cn}
+  & Email : \href{mailto:bin646891055@gmail.com}{bin646891055@gmail.com}\\
+  \href{https://github.com/binacslee}{https://github.com/binacslee}
+  & Mobile : +086-132-7706-5357 \\
+\end{tabular*}
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\href{https://en.whu.edu.cn}{Wuhan University}}{Wuhan, CN}
+      {Bachelor of Engineering in Information Security;  GPA: 3.27 / 4.00}{Sep. 2015 -- Jun. 2019}
+  \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------------
+\section{Programming Skills}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Languages}{Go / C++}
+    \resumeSubItem{Technologies}{Kubernetes / Docker / Redis}
+    \resumeSubItem{Distributed Consensus}{PBFT / RAFT}
+    \resumeSubItem{Competitive Programming}{\href{https://leetcode-cn.com/u/binacslee-cn/}{LeetCode rating 2100+}}
+  \resumeSubHeadingListEnd
+  
+%-----------OPEN SOURCE CONTRIBUTION-----------------
+\section{Open Source Contribution}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Especially familiar with}
+    {\textbf{}{Kubernetes scheduling / Ethereum architecture.}}
+    \resumeSubItem{Member of}
+    {\textbf{}{
+      \href{https://github.com/kubernetes}{Kubernetes} /
+      \href{https://github.com/kubernetes-sigs}{Kubernetes SIGs}.}}
+    \resumeSubItem{Contributor of}
+    {\textbf{}{
+      \href{https://github.com/ethereum}{ethereum} /
+      \href{https://github.com/etcd-io}{etcd-io} etc.}}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Xunlei Ltd}{Shenzhen, CN}
+      {Blockchain Protocol Engineer}{Jul 2019 - Present}
+      \resumeItemListStart
+        \resumeItem{ThunderChain}
+          {ThunderChain is a high-performance blockchain that supports plug-in consensus.
+          Refactored the consensus module and participated in the self-developed higher-performance
+          BALAS consensus; rewritten the relay node to reduce the performance consumption by 80\%,
+          and the transaction forwarding performance was 1.7 times the original.}
+        \resumeItem{BaaS}
+          {Blockchain as a Service provides a platform for the public to quickly and easily build a
+          complete blockchain ecosystem.
+          Designed and implemented a BaaS solution based on kubernetes, which solved the problems of
+          blockchain adaptation, node persistent storage, node scheduling and dynamic migration; wrote
+          a new Dockerfile to support CGO, reducing the original container size by 90\%}
+        \resumeItem{TC Monitor}
+          {TC Monitor is a service that collects and displays ThunderChain monitoring. Participated in
+          the design of the implementation of low-code intrusion monitoring, independently wrote the
+          ThunderChain exporter and supported prometheus and opentracing at the blockchain layer.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubItem{\href{https://github.com/BinacsLee/server}{server}}
+      {Runs on Kubernetes and powers \href{https://binacs.cn/}{binacs.cn}.
+      Support   \href{https://binacs.cn/toys/crypto}{Crypto} / 
+                \href{https://binacs.cn/toys/pastebin}{Pastebin} / 
+                \href{https://binacs.cn/toys/tinyurl}{TinyURL} / 
+                \href{https://binacs.cn/toys/storage}{Storage}
+      etc.}
+    \resumeSubItem{\href{https://github.com/BinacsLee/cli}{cli}}
+      {Terminal client for \href{https://github.com/BinacsLee/server}{server}. Quick visit
+      \href{https://binacs.cn/}{binacs.cn}. Use gRPC protocol for communication}
+    \resumeSubItem{\href{https://github.com/binacsgo/inject}{inject}}
+      {Dependency injection library for Go.}
+    \resumeSubItem{\href{https://github.com/binacsgo/pqueue}{pqueue}}
+      {PQueue written in Go, based on LRU algorithm.}
+    \resumeSubItem{\href{https://github.com/OpenKikCoc/deployment-cpeditor-ide}{deployment-cpeditor-ide}}
+      {Docker deployment for CP Editor IDE. Support GUI with noVNC.}
+    \resumeSubItem{More at}
+      {\href{https://github.com/BinacsLee}{BinacsLee} /
+       \href{https://github.com/OpenKikCoc}{OpenKikCoc} /
+       \href{https://github.com/binacsgo}{binacsgo}.}
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
