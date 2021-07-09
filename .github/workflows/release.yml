@@ -1,7 +1,7 @@
 name: Release LaTeX PDF
 on: [push]
 jobs:
-  build_latex:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository

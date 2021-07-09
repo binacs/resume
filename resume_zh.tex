@@ -1,5 +1,8 @@
 \documentclass[letterpaper,12pt]{article}
 
+% ---- Chinese Support ----
+\usepackage{CJKutf8}
+% ---------- END ----------
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -9,7 +12,7 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage[english]{babel}
+% \usepackage[english]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
 
@@ -60,13 +63,15 @@
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
+      \textup{\small#3} & \textup{\small #4} \\
+    % \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-5pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
+      \textup{\small#1} & \textup{\small #2} \\
+    % \textit{\small#1} & \textit{\small #2} \\
     \end{tabular*}\vspace{-5pt}
 }
 
@@ -84,98 +89,101 @@
 
 \begin{document}
 
+% ---- Chinese Support ----
+\begin{CJK*}{UTF8}{gbsn}
+% ---------- END ----------
+
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{https://binacs.cn/}{\Large Bing Li}}\\
+  \textbf{\href{https://binacs.cn/}{\Large 李冰}}\\
   \href{https://binacs.cn}{https://binacs.cn}
-  & Email : \href{mailto:bin646891055@gmail.com}{bin646891055@gmail.com}\\
+  & 电子邮件 : \href{mailto:bin646891055@gmail.com}{bin646891055@gmail.com}\\
   \href{https://github.com/binacslee}{https://github.com/binacslee}
-  & Mobile : +086-132-7706-5357 \\
+  & 联系电话 : +086-132-7706-5357 \\
 \end{tabular*}
 
 %-----------EDUCATION-----------------
-\section{Education}
+\section{教育经历}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {\href{http://cse.whu.edu.cn}{School of Cyber Science and Engineering},
-      \href{https://en.whu.edu.cn}{Wuhan University}}{Wuhan, CN}
-      {Bachelor of Engineering in Information Security;  GPA: 3.27 / 4.00}{Sep. 2015 -- Jun. 2019}
+      {\href{https://en.whu.edu.cn}{武汉大学} 
+      \href{http://cse.whu.edu.cn}{国家网络安全学院}}{武汉}
+      {信息安全工学学士;  GPA: 3.27 / 4.00}{2015.09 -- 2019.06}
   \resumeSubHeadingListEnd
 
 %-----------PROGRAMMING SKILLS-----------------
-\section{Programming Skills}
+\section{编程技能}
   \resumeSubHeadingListStart
-    \resumeSubItem{Languages}{Go / C++}
-    \resumeSubItem{Technologies}{Kubernetes / Docker / Redis}
-    \resumeSubItem{Distributed Consensus}{PBFT / RAFT}
-    \resumeSubItem{Competitive Programming}{\href{https://leetcode-cn.com/u/binacslee-cn/}{LeetCode Contest rating 2300+}}
+    \resumeSubItem{语言}{Go / C++}
+    \resumeSubItem{熟悉}{Kubernetes / Docker / Redis}
+    \resumeSubItem{分布式共识}{PBFT / RAFT}
+    \resumeSubItem{竞技性编程}{\href{https://leetcode-cn.com/u/binacslee-cn/}{LeetCode Contest rating 2300+}}
   \resumeSubHeadingListEnd
   
 %-----------OPEN SOURCE CONTRIBUTION-----------------
-\section{Open Source Contribution}
+\section{开源贡献}
   \resumeSubHeadingListStart
-    \resumeSubItem{Especially familiar with}
+    \resumeSubItem{熟悉}
     {\textbf{}{Kubernetes scheduling / Ethereum architecture.}}
-    \resumeSubItem{Member of}
+    \resumeSubItem{作为社区成员}
     {\textbf{}{
       \href{https://github.com/kubernetes}{Kubernetes} /
       \href{https://github.com/kubernetes-sigs}{Kubernetes SIGs} /
       \href{https://github.com/istio}{Istio}.}}
-    \resumeSubItem{Contributor of}
+    \resumeSubItem{作为代码贡献者}
     {\textbf{}{
       \href{https://github.com/ethereum}{ethereum} /
       \href{https://github.com/etcd-io}{etcd-io} etc.}}
   \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------------
-\section{Experience}
+\section{工作经历}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Xunlei Ltd}{Shenzhen, CN}
-      {Blockchain Protocol Engineer}{Jul 2019 - Present}
+      {迅雷}{深圳}
+      {高性能区块链底层}{2019.07 - 至今}
       \resumeItemListStart
         \resumeItem{ThunderChain}
-          {ThunderChain is a high-performance blockchain that supports plug-in consensus.
-          Refactored the consensus module and participated in the self-developed higher-performance
-          BALAS consensus; rewritten the relay node to reduce the performance consumption by 80\%,
-          and the transaction forwarding performance was 1.7 times the original.}
+          {ThunderChain是一个支持插件共识的高性能区块链。
+          参与重构共识模块，参与实现了自主研发并具有更高性能的BALAS共识；
+          重写relay节点将其性能消耗降低了80\%，交易转发性能是原来的 1.7倍。}
         \resumeItem{BaaS}
-          {Blockchain as a Service provides a platform for the public to build a
-          complete blockchain ecosystem easily.
-          Designed and implemented a BaaS solution based on kubernetes, which solved the problems of
-          blockchain adaptation, node persistent storage, node scheduling and dynamic migration; wrote
-          a new Dockerfile to support CGO, reducing the original container size by 90\%}
+          {区块链即服务(Blockchain as a Service)为公众提供了一个简单地建立区块链生态的平台。
+          负责设计并实现了基于Kubernetes的BaaS方案，解决了区块链底层适配、节点持久化存储、
+          节点调度和动态迁移等问题；重写了支持CGO的Dockerfile，将容器大小缩小了90\%。}
         \resumeItem{TC Monitor}
-          {TC Monitor is a service that collects and displays ThunderChain monitoring. Participated in
-          the design of the implementation of low-code intrusion monitoring, independently wrote the
-          ThunderChain exporter and supported prometheus and opentracing at the blockchain layer.}
+          {TC Monitor是一个收集和展示 ThunderChain 监控的服务。参与设计了低代码侵入的监控实现方
+          案，独立实现了ThunderChain Exporter并在区块链底层埋点支持Prometheus和OpenTracing。}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------------
-\section{Projects}
+\section{个人项目}
   \resumeSubHeadingListStart
     \resumeSubItem{\href{https://github.com/BinacsLee/server}{server}}
-      {Runs on Kubernetes and powers \href{https://binacs.cn/}{binacs.cn}.
-      Support   \href{https://binacs.cn/toys/crypto}{Crypto} / 
+      {运行在Kubernetes集群之上并支撑\href{https://binacs.cn/}{binacs.cn}。
+      支持   \href{https://binacs.cn/toys/crypto}{Crypto} / 
                 \href{https://binacs.cn/toys/pastebin}{Pastebin} / 
                 \href{https://binacs.cn/toys/tinyurl}{TinyURL} / 
                 \href{https://binacs.cn/toys/storage}{Storage}
-      etc.}
+      等功能。}
     \resumeSubItem{\href{https://github.com/BinacsLee/cli}{cli}}
-      {Terminal client for \href{https://github.com/BinacsLee/server}{server}. Quick visit
-      \href{https://binacs.cn/}{binacs.cn}. Use gRPC protocol for communication}
+      {运行于终端命令行的\href{https://github.com/BinacsLee/server}{server}客户端。快速访问
+      \href{https://binacs.cn/}{binacs.cn}接口。使用gRPC协议通信。}
     \resumeSubItem{\href{https://github.com/binacsgo/inject}{inject}}
-      {Dependency injection library for Go.}
+      {Go语言实现的依赖注入框架。}
     % \resumeSubItem{\href{https://github.com/binacsgo/pqueue}{pqueue}}
     %   {PQueue written in Go, based on LRU algorithm.}
     % \resumeSubItem{\href{https://github.com/OpenKikCoc/deployment-cpeditor-ide}{deployment-cpeditor-ide}}
     %   {Docker deployment for CP Editor IDE. Support GUI with noVNC.}
-    \resumeSubItem{More at}
+    \resumeSubItem{更多}
       {\href{https://github.com/BinacsLee}{BinacsLee} /
        \href{https://github.com/OpenKikCoc}{OpenKikCoc} /
        \href{https://github.com/binacsgo}{binacsgo}.}
   \resumeSubHeadingListEnd
 
+% ---- Chinese Support ----
+\end{CJK*}
+% ---------- END ----------
 %-------------------------------------------
 \end{document}
